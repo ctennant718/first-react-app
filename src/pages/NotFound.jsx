@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import TempHeader from "../components/TempHeader";
 
 function NotFound() {
   return (
-    <div>NotFound</div>
-  )
+    <>
+      <TempHeader />
+      <div>NotFound</div>
+    </>
+  );
 }
 
-export default NotFound
+export default NotFound;
