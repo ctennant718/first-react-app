@@ -28,10 +28,15 @@ export default function CarForm({ car, submitHandler }) {
     reset,
     //so react hook form can control MUI components
     control,
+    formState,
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
     defaultValues: car || defaults,
+  });
+
+  useEffect(() => {
+    console.log(formState);
   });
 
   //takes care of population when we feed a car in
