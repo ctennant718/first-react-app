@@ -1,11 +1,17 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Typography from "@mui/material/Typography";
+import CarForm from "../components/forms/CarForm";
 
 function Update() {
   const { id } = useParams();
+  // send car and handler to form
   return (
     <>
-      <div>Update {id}</div>
+      <Typography variant="h2" component="h1">
+        Update Car
+      </Typography>
+      <CarForm />
     </>
   );
 }
