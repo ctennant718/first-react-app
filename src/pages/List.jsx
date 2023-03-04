@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 // import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import List from "@mui/material/List";
@@ -14,44 +14,27 @@ import Typography from "@mui/material/Typography";
 
 import { CarsContext } from "../components/contexts/car.context";
 
-function CarsList() {
-const {cars, fetchCars} = useContext(CarsContext)
+import CarsList from "../components/CarsList";
 
-useEffect(() => {
-  fetchCars();
-}, [fetchCars] )
+function CarsListPage() {
+  const { cars, fetchCars, deleteCar } = useContext(CarsContext);
+
+  useEffect(() => {
+    fetchCars();
+  }, [fetchCars]);
+
+  const deleteHandler = (id) => {
+    deleteCar(id);
+  };
+
   return (
     <>
       <Typography variant="h3" component="h2">
         Cars
       </Typography>
-      <List>
-        {cars.map(({ name, bhp, avatar_url, _id }, i) => (
-          <ListItem key={i}>
-            <ListItemAvatar>
-              <Avatar alt="" src={avatar_url} />
-            </ListItemAvatar>
-            <ListItemText>
-              {name} (BHP: {bhp})
-            </ListItemText>
-            <IconButton
-              aria-label="update"
-              to={`/update/${_id}`}
-              component={Link}
-            >
-              <EditIcon />
-            </IconButton>
-            <IconButton
-              aria-label="delete"
-              onClick={() => console.log(`Delete ${_id}`)}
-            >
-              <DeleteIcon />
-            </IconButton>
-          </ListItem>
-        ))}
-      </List>
+      <CarsList cars={cars} deleteHandler={deleteHandler} />
     </>
   );
 }
 
-export default CarsList;
+export default CarsListPage;
