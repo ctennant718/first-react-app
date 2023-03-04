@@ -29,7 +29,8 @@ function Layout() {
           <CloseIcon fontSize="small" />
         </IconButton>
       </React.Fragment>
-    )};
+    );
+  };
 
   return (
     <>
