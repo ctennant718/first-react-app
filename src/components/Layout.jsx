@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import TempHeader from "./TempHeader";
+import Header from "./Header";
 import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
@@ -35,8 +35,7 @@ function Layout() {
   return (
     <>
       <header>
-        <h1>Cars App</h1>
-        <TempHeader />
+        <Header />
       </header>
       <main>
         {/* {JSON.stringify({ isOpen: open, severity, handleClose, message })} */}

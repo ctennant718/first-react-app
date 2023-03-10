@@ -27,8 +27,6 @@ export const CarsProvider = ({ children }) => {
   // const [search, setSearch] = useState("");
   // const { addToast } = useToasts();
 
-  // const CARS_ENDPOINT = "https://carsapp2050.herokuapp.com/api/v1/cars/";
-
   const fetchCars = useCallback(async () => {
     // console.log('loading', loading);
     // console.log('error', error);
